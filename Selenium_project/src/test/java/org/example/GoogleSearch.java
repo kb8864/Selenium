@@ -36,12 +36,11 @@ public class GoogleSearch {
 
     //検索リンクの要素を追加
     //Seleniumを含むリンク要素を部分一致で取得
-    new WebDriverWait(driver, Duration.ofSeconds(5)).until(
-            ExpectedConditions.presenceOfElementLocated(By.partialLinkText("Selenium"))
+    new WebDriverWait(driver, Duration.ofSeconds(10)).until(
+            ExpectedConditions.presenceOfElementLocated(By.cssSelector("div#search a h3"))
     );
-    WebElement link = driver.findElement(By.partialLinkText("Selenium"));
+    WebElement link = driver.findElement(By.cssSelector("div#search a"));
     link.click();
-
     //すぐブラウザが閉じないように検索結果が出た状態で 10秒間）何もしないで停止し、その後ブラウザを完全に閉じる
     Thread.sleep(10000);
     driver.quit();
