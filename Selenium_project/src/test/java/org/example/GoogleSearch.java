@@ -34,6 +34,14 @@ public class GoogleSearch {
     WebElement inputElement = driver.findElement(By.className("gLFyf"));
     inputElement.sendKeys("Selenium" + Keys.ENTER);
 
+    //検索リンクの要素を追加
+    //Seleniumを含むリンク要素を部分一致で取得
+    new WebDriverWait(driver, Duration.ofSeconds(5)).until(
+            ExpectedConditions.presenceOfElementLocated(By.partialLinkText("Selenium"))
+    );
+    WebElement link = driver.findElement(By.partialLinkText("Selenium"));
+    link.click();
+
     //すぐブラウザが閉じないように検索結果が出た状態で 10秒間）何もしないで停止し、その後ブラウザを完全に閉じる
     Thread.sleep(10000);
     driver.quit();
