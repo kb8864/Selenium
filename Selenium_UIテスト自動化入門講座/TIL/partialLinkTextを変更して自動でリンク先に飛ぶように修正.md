@@ -34,3 +34,10 @@ By.cssSelector("div#search a")
 「検索結果エリア（`div#search`）の中にあるリンク」を探し
 テキストの内容は関係なく、**HTML構造だけ**で探しているので確実に見つかる
 ```
+
+### 修正後の挙動
+
+
+https://github.com/user-attachments/assets/7e8d2912-ee93-46c7-866b-0e3ae5c86096
+
+
